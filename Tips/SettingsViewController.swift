@@ -2,7 +2,7 @@
 //  SettingsViewController.swift
 //  Tips
 //
-//  Created by Grace Egbo on 12/11/15.
+//  Created by Grace Egbo on 12/04/15.
 //  Copyright © 2015 Grace Egbo. All rights reserved.
 //
 

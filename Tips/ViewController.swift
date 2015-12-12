@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Tips
 //
-//  Created by Grace Egbo on 12/11/15.
+//  Created by Grace Egbo on 12/04/15.
 //  Copyright © 2015 Grace Egbo. All rights reserved.
 //
 
@@ -23,12 +23,25 @@ class ViewController: UIViewController
         self.title = "Tip Calculator"
         tipLabel.text = "0.00"
         totalLabel.text = "0.00"
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let intValue = defaults.integerForKey("tipDefault") //gets current default value from settings
+        tipControl.selectedSegmentIndex = intValue
+        let billAmount = Double(billField.text!)
+        if(billAmount == nil) //checks if bill amount field has a text in it, if it does it calls the method indicated to update the amount (if needed be)
+        {
+            
+        }
+        else
+        {
+            onEditingChanged(tipControl)
+        }
+
         self.FirstView.alpha = 0
         UIView.animateWithDuration(1, animations: {
             // This causes first view to fade in 
             self.FirstView.alpha = 1
         })
-
+        print("View did load")
     }
     
     override func viewWillAppear(animated: Bool)
@@ -71,9 +84,9 @@ class ViewController: UIViewController
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let intValue = defaults.integerForKey("tipDefault") //gets current default value from settings
-        tipControl.selectedSegmentIndex = intValue
+        //let defaults = NSUserDefaults.standardUserDefaults()
+        //let intValue = defaults.integerForKey("tipDefault") //gets current default value from settings
+        //tipControl.selectedSegmentIndex = intValue
         print("view will disappear")
     }
     

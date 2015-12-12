@@ -1,17 +1,17 @@
-# Pre-work - *Name of App Here*
+# Pre-work - *Tip Calculator*
 
-**Name of your app** is a tip calculator application for iOS.
+**Tips** is a tip calculator application for iOS.
 
-Submitted by: **Your Name Here**
+Submitted by: **Grace Egbo**
 
-Time spent: **X** hours spent in total
+Time spent: **15** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is complete:
 
-* [ ] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
-* [ ] Settings page to change the default tip percentage.
+* [X ] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
+* [X ] Settings page to change the default tip percentage.
 
 The following **optional** features are implemented:
 * [ ] UI animations
@@ -35,9 +35,11 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
+When I started the project, I couldn't figure out why my app only showed in the upper left hand corner of the simulator (depsite me changing the zoom levels). The only way that I fixed it was changing the simulator from iPhone 6 and iPhone 5 and lower. Moreover, when I was initially building the calculator (by watching the video provided), some of the code syntax was not updated so I had to look online to find the updated Swift 2.1 syntax. 
+
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2015] [Grace Egbo]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

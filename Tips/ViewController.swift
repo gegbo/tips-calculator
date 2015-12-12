@@ -84,9 +84,6 @@ class ViewController: UIViewController
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        //let defaults = NSUserDefaults.standardUserDefaults()
-        //let intValue = defaults.integerForKey("tipDefault") //gets current default value from settings
-        //tipControl.selectedSegmentIndex = intValue
         print("view will disappear")
     }
     

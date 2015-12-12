@@ -35,7 +35,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
-When I started the project, I couldn't figure out why my app only showed in the upper left hand corner of the simulator (depsite me changing the zoom levels). The only way that I fixed it was changing the simulator from iPhone 6 and iPhone 5 and lower. Moreover, when I was initially building the calculator (by watching the video provided), some of the code syntax was not updated so I had to look online to find the updated Swift 2.1 syntax. 
+When I started the project, I couldn't figure out why my app only showed in the upper left hand corner of the simulator (depsite me changing the zoom levels). The only way that I fixed it was changing the simulator from iPhone 6 and iPhone 5 and lower. Moreover, when I was initially building the calculator (by watching the video provided), some of the code syntax was not updated so I had to look online to find the updated Swift 2.1 syntax. Lastly, whenever i clicked around in my iOS simulator, it would produce black spots for some unknown reason
 
 ## License
 

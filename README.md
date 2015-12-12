@@ -1,2 +1,54 @@
-# tips-calculator-
-This calculator can calculate tips 
+# Pre-work - *Tip Calculator*
+
+**Tips** is a tip calculator application for iOS.
+
+Submitted by: **Grace Egbo**
+
+Time spent: **15** hours spent in total
+
+## User Stories
+
+The following **required** functionality is complete:
+
+* [X ] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
+* [X ] Settings page to change the default tip percentage.
+
+The following **optional** features are implemented:
+* [ ] UI animations
+* [ ] Remembering the bill amount across app restarts (if <10mins)
+* [ ] Using locale-specific currency and currency thousands separators.
+* [ ] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+
+The following **additional** features are implemented:
+
+- [ ] List anything else that you can get done to improve the app functionality!
+
+## Video Walkthrough 
+
+Here's a walkthrough of implemented user stories:
+
+<img src='http://i.imgur.com/FFCWD6y.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+## Notes
+
+Describe any challenges encountered while building the app.
+
+When I started the project, I couldn't figure out why my app only showed in the upper left hand corner of the simulator (depsite me changing the zoom levels). The only way that I fixed it was changing the simulator from iPhone 6 and iPhone 5 and lower. Moreover, when I was initially building the calculator (by watching the video provided), some of the code syntax was not updated so I had to look online to find the updated Swift 2.1 syntax. 
+
+## License
+
+    Copyright [2015] [Grace Egbo]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.

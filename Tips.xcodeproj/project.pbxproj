@@ -13,6 +13,7 @@
 		EAC1BDCD1C1BB127004B93C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC1BDCC1C1BB127004B93C8 /* Assets.xcassets */; };
 		EAC1BDD01C1BB127004B93C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC1BDCE1C1BB127004B93C8 /* LaunchScreen.storyboard */; };
 		EAC1BDD81C1BB258004B93C8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1BDD71C1BB258004B93C8 /* SettingsViewController.swift */; };
+		EAF00C0F1C1E72EB0008CB1E /* Tipla.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF00C0E1C1E72EB0008CB1E /* Tipla.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EAC1BDCF1C1BB127004B93C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAC1BDD11C1BB127004B93C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAC1BDD71C1BB258004B93C8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		EAF00C0E1C1E72EB0008CB1E /* Tipla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tipla.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				EAC1BDD71C1BB258004B93C8 /* SettingsViewController.swift */,
 				EAC1BDCC1C1BB127004B93C8 /* Assets.xcassets */,
 				EAC1BDCE1C1BB127004B93C8 /* LaunchScreen.storyboard */,
+				EAF00C0E1C1E72EB0008CB1E /* Tipla.png */,
 				EAC1BDD11C1BB127004B93C8 /* Info.plist */,
 			);
 			path = Tips;
@@ -128,6 +131,7 @@
 				EAC1BDD01C1BB127004B93C8 /* LaunchScreen.storyboard in Resources */,
 				EAC1BDCD1C1BB127004B93C8 /* Assets.xcassets in Resources */,
 				EAC1BDCB1C1BB127004B93C8 /* Main.storyboard in Resources */,
+				EAF00C0F1C1E72EB0008CB1E /* Tipla.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +292,7 @@
 				EAC1BDD61C1BB127004B93C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

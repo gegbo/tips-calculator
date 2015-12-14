@@ -14,6 +14,7 @@ class ViewController: UIViewController
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var billField: UITextField!
+    var billAmount: Double!
     
     @IBOutlet var FirstView: UIView!
 
@@ -23,17 +24,55 @@ class ViewController: UIViewController
         self.title = "Tip Calculator"
         tipLabel.text = "0.00"
         totalLabel.text = "0.00"
+        
         let defaults = NSUserDefaults.standardUserDefaults()
         let intValue = defaults.integerForKey("tipDefault") //gets current default value from settings
         tipControl.selectedSegmentIndex = intValue
-        let billAmount = Double(billField.text!)
-        if(billAmount == nil) //checks if bill amount field has a text in it, if it does it calls the method indicated to update the amount (if needed be)
+        
+        let colorValue = defaults.integerForKey("colorDefault")
+        if(colorValue == 1)
         {
-            
+            self.view.backgroundColor = UIColor.lightGrayColor()
+            billField.backgroundColor = UIColor(red: 0.78, green: 0.78, blue: 0.78, alpha: 1)
+        }
+        else if(colorValue == 2)
+        {
+            self.view.backgroundColor = UIColor.purpleColor()
+            billField.backgroundColor = UIColor(red: 0.91, green: 0.82, blue: 0.89, alpha: 1)
+        }
+
+        var initialTime = defaults.objectForKey("date")
+        if(initialTime == nil)
+        {
+            defaults.setObject(NSDate(), forKey: "date")
+            initialTime = defaults.objectForKey("date")
+            billField.text! = String(defaults.doubleForKey("billAmount")) //set bill text field as value from user defaults
+            print(initialTime)
         }
         else
         {
+            let elaspedTime = NSDate().timeIntervalSinceDate(NSUserDefaults.standardUserDefaults().objectForKey("date") as! NSDate!)
+            if (elaspedTime > 600.00) // checks if elasped time is more than 10 min (600 seconds)
+            {
+                defaults.setObject(nil, forKey: "date") //resets the time
+                print(elaspedTime)
+                print("Time has been reset")
+            }
+            else
+            {
+                billField.text! = String(defaults.doubleForKey("billAmount")) //set bill text field as value from user defaults
+                print("Time has not been reset yet")
+                print(elaspedTime)
+            }
+
+        }
+        
+        
+        let billAmount = Double(billField.text!)
+        if(billAmount != nil) //checks if bill amount field has a text in it, if it does it calls the method indicated to update the amount (if needed be)
+        {
             onEditingChanged(tipControl)
+
         }
 
         self.FirstView.alpha = 0
@@ -50,6 +89,8 @@ class ViewController: UIViewController
         let defaults = NSUserDefaults.standardUserDefaults()
         let intValue = defaults.integerForKey("tipDefault") //gets current default value from settings
         tipControl.selectedSegmentIndex = intValue
+        
+        billField.becomeFirstResponder() // makes sure that the keyboard automatically pops up first
         let billAmount = Double(billField.text!)
         if(billAmount == nil) //checks if bill amount field has a text in it, if it does it calls the method indicated to update the amount (if needed be)
         {
@@ -59,6 +100,29 @@ class ViewController: UIViewController
         {
           onEditingChanged(tipControl)
         }
+        
+        let colorValue = defaults.integerForKey("colorDefault")
+        if(colorValue == 1)
+        {
+            self.view.backgroundColor = UIColor.lightGrayColor()
+            billField.backgroundColor = UIColor(red: 0.78, green: 0.78, blue: 0.78, alpha: 1)
+        }
+        else if(colorValue == 2)
+        {
+            self.view.backgroundColor = UIColor.purpleColor()
+            billField.backgroundColor = UIColor(red: 0.91, green: 0.82, blue: 0.89, alpha: 1)
+        }
+        else
+        {
+            self.view.backgroundColor = UIColor.whiteColor()
+            billField.backgroundColor = UIColor.whiteColor()
+        }
+        
+        billField.center.x -= view.bounds.width
+        tipControl.center.x -= view.bounds.width
+        tipLabel.center.x -= view.bounds.width
+        totalLabel.center.x -= view.bounds.width
+
         print("view will appear")
     }
     
@@ -78,7 +142,31 @@ class ViewController: UIViewController
         {
             onEditingChanged(tipControl)
         }
+        
+        let colorValue = defaults.integerForKey("colorDefault")
+        if(colorValue == 1)
+        {
+            self.view.backgroundColor = UIColor.lightGrayColor()
+            billField.backgroundColor = UIColor(red: 0.78, green: 0.78, blue: 0.78, alpha: 1)
+        }
+        else if(colorValue == 2)
+        {
+            self.view.backgroundColor = UIColor.purpleColor()
+            billField.backgroundColor = UIColor(red: 0.91, green: 0.82, blue: 0.89, alpha: 1)
+        }
+        else
+        {
+            self.view.backgroundColor = UIColor.whiteColor()
+            billField.backgroundColor = UIColor.whiteColor()
+        }
 
+        UIView.animateWithDuration(0.5, animations: {
+            self.billField.center.x += self.view.bounds.width
+            self.tipControl.center.x += self.view.bounds.width
+            self.tipLabel.center.x += self.view.bounds.width
+            self.totalLabel.center.x += self.view.bounds.width
+        })
+        
         print("view did appear")
     }
     
@@ -108,12 +196,25 @@ class ViewController: UIViewController
         let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
         let billAmount = Double(billField.text!)
-        let tip = billAmount! * tipPercentage
-        let total = billAmount! + tip
         
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        formatter.locale = NSLocale.currentLocale() // This is the default
         
-        tipLabel.text = String.localizedStringWithFormat("$%.2f", tip) //formats number to have 2 decimal points
-        totalLabel.text = String.localizedStringWithFormat("$%.2f", total) //formats number to have 2 decimal points
+        if(billAmount != nil)
+        {
+            let tip = billAmount! * tipPercentage
+            let total = billAmount! + tip
+            tipLabel.text = formatter.stringFromNumber(tip) //formats number to have 2 decimal points
+            totalLabel.text = formatter.stringFromNumber(total) //formats number to have 2 decimal points
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setDouble(billAmount!, forKey: "billAmount")
+        }
+        else
+        {
+            tipLabel.text = "0.00"
+            totalLabel.text = "0.00"
+        }
     }
 
     @IBAction func onTap(sender: AnyObject)

@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var defaultTip: UISegmentedControl!
+    @IBOutlet weak var defaultColor: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +19,20 @@ class SettingsViewController: UIViewController {
         self.title = "Default Tip Settings"
         let defaults = NSUserDefaults.standardUserDefaults()
         let intValue = defaults.integerForKey("tipDefault")
+        let colorValue = defaults.integerForKey("colorDefault")
         
         defaultTip.selectedSegmentIndex = intValue
+        defaultColor.selectedSegmentIndex = colorValue
+        
+        if(colorValue == 1)
+        {
+            self.view.backgroundColor = UIColor.lightGrayColor()
+        }
+        else if(colorValue == 2)
+        {
+            self.view.backgroundColor = UIColor.purpleColor()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +47,13 @@ class SettingsViewController: UIViewController {
         defaults.synchronize()
     }
 
+    @IBAction func colorDefault(sender: AnyObject)
+    {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(defaultColor.selectedSegmentIndex, forKey: "colorDefault")
+        defaults.synchronize()
+    }
+    
     /*
     // MARK: - Navigation
 

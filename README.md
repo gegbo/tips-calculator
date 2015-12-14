@@ -1,4 +1,4 @@
-# Pre-work - *Tip Calculator*
+# Pre-work - *Tipla*
 
 **Tipla** is a tip calculator application for iOS.
 

@@ -1,10 +1,10 @@
 # Pre-work - *Tip Calculator*
 
-**Tips** is a tip calculator application for iOS.
+**Tipla** is a tip calculator application for iOS.
 
 Submitted by: **Grace Egbo**
 
-Time spent: **15** hours spent in total
+Time spent: **20** hours spent in total
 
 ## User Stories
 

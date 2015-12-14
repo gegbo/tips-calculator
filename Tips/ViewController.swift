@@ -52,7 +52,7 @@ class ViewController: UIViewController
         else
         {
             let elaspedTime = NSDate().timeIntervalSinceDate(NSUserDefaults.standardUserDefaults().objectForKey("date") as! NSDate!)
-            if (elaspedTime > 600.00) // checks if elasped time is more than 10 min (600 seconds)
+            if (elaspedTime > 100.00) // checks if elasped time is more than 10 min (600 seconds)
             {
                 defaults.setObject(nil, forKey: "date") //resets the time
                 print(elaspedTime)
